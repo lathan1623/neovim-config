@@ -16,7 +16,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/echasnovski/mini.pick" },
 	{ src = "https://github.com/echasnovski/mini.pairs" },
-	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{ src = "https://github.com/mason-org/mason.nvim" },
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -35,6 +35,7 @@ vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', {
 	expr = true, noremap = true, silent = true
 })
 
+require "mason".setup()
 require "mini.pairs".setup()
 require "mini.pick".setup()
 require "oil".setup()
@@ -43,7 +44,7 @@ vim.keymap.set('n', '<leader>pf', ":Pick files<CR>")
 vim.keymap.set('n', '<leader>h', ":Pick help<CR>")
 vim.keymap.set('n', '<leader>e', ":Oil<CR>")
 
-vim.lsp.enable({ "lua_ls", "jdtls" })
+vim.lsp.enable({ "lua_ls", "jdtls", "rust-analyzer"})
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
 
 vim.cmd("colorscheme nightly")
