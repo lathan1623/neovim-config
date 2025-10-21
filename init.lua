@@ -15,6 +15,7 @@ vim.pack.add({
 	{ src = "https://github.com/Alexis12119/nightly.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/echasnovski/mini.pick" },
+	{ src = "https://github.com/echasnovski/mini.pairs" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 })
 
@@ -34,6 +35,7 @@ vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', {
 	expr = true, noremap = true, silent = true
 })
 
+require "mini.pairs".setup()
 require "mini.pick".setup()
 require "oil".setup()
 
