@@ -62,7 +62,3 @@ vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
 vim.o.termguicolors = true
 vim.cmd("colorscheme minispring")
 vim.cmd(":hi statusline guibg=NONE")
-vim.cmd [[
-  hi MiniPickCurrent guibg=#3E4452 guifg=#ABB2BF
-  hi MiniPickSelected guibg=#61AFEF guifg=#282C34
-]]
